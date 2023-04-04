@@ -65,7 +65,7 @@ class InfoController extends GetxController {
 
       Get.back();
 
-      final _user = await UserService.updateUser(user.value.idsv,
+      final _user = await UserService.updateUser(user.value.name,user.value.idsv,
           user.value.cccd, user.value.phone, user.value.address);
 
 

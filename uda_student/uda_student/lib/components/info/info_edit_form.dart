@@ -31,6 +31,20 @@ class InfoEdutForm extends StatelessWidget {
                         fontWeight: FontWeight.w600)),
                 const SizedBox(height: 10),
                 _EditField(
+                    label: 'Họ và tên',
+                    child: TextField(
+                        controller: TextEditingController()
+                          ..text = c.user.value.name,
+                        cursorColor: kPrimaryColor,
+                        onChanged: (String text) => c.user.value.name = text,
+                        style: TextStyle(
+                          // fontWeight: FontWeight.w500
+                            color: Colors.black.withOpacity(0.8)),
+                        decoration: kPrimaryInput.copyWith(
+                            hintText: 'Họ và tên',
+                            prefixIcon: Icon(Ionicons.person_add,
+                                color: Colors.black.withOpacity(0.5))))),
+                _EditField(
                     label: 'Số Điện Thoại',
                     child: TextField(
                         controller: TextEditingController()

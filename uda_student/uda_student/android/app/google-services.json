@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "244783959098",
-    "project_id": "api-quanlysv",
-    "storage_bucket": "api-quanlysv.appspot.com"
+    "project_number": "668007380477",
+    "project_id": "flutter-fcm-db5d0",
+    "storage_bucket": "flutter-fcm-db5d0.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:244783959098:android:971b5df7e7a2ad56c0b903",
+        "mobilesdk_app_id": "1:668007380477:android:f5776c7ab765d850879594",
         "android_client_info": {
           "package_name": "com.example.uda_qlsv"
         }
       },
       "oauth_client": [
         {
-          "client_id": "244783959098-od8g5roc6gl40hp2saapffn3rs38hdk2.apps.googleusercontent.com",
+          "client_id": "668007380477-uqnp5e4ueaonvvg8l8n9m8a7o27b45ku.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyALWGyZrutsS0ry48wqdeYpv1lGc_UN5V8"
+          "current_key": "AIzaSyCVHuIAecwZi4_SLKqGGAw5Oq0ZarkQMG8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "244783959098-od8g5roc6gl40hp2saapffn3rs38hdk2.apps.googleusercontent.com",
+              "client_id": "668007380477-uqnp5e4ueaonvvg8l8n9m8a7o27b45ku.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -14,11 +14,11 @@ class UserService {
     return response.data["data"] as String;
   }
 
-  static Future<User> updateUser(
+  static Future<User> updateUser(String name,
       String idsv, String cccd, String phone, String address) async {
     final res = await UserService().appService.network.patch(
         '/users/update/$idsv',
-        data: {'cccd': cccd, 'phone': phone, 'address': address});
+        data: {'name':name,'cccd': cccd, 'phone': phone, 'address': address});
     return User.fromJson(res.data['data']);
   }
 }

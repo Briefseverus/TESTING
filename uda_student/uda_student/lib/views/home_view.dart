@@ -11,7 +11,7 @@ import 'package:uda_qlsv/components/home/home_notifies.dart';
 import 'package:uda_qlsv/components/home/home_tab_view.dart';
 import 'package:uda_qlsv/models/notify.dart';
 import 'package:uda_qlsv/views/notifies_view.dart';
-
+import 'package:uda_qlsv/views/info_view.dart';
 import '../theme/color.dart';
 import 'menu_drawer.dart';
 
@@ -172,7 +172,9 @@ class _HomeViewState extends State<HomeView> {
             icon: const Icon(Ionicons.menu_outline, color: kTextColor)),
         actions: [
           TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed(InfoView.route);
+              },
               style:
                   TextButton.styleFrom(splashFactory: NoSplash.splashFactory),
               child: ClipRRect(
