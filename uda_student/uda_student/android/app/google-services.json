@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "244783959098",
+    "project_id": "api-quanlysv",
+    "storage_bucket": "api-quanlysv.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:244783959098:android:971b5df7e7a2ad56c0b903",
+        "android_client_info": {
+          "package_name": "com.example.uda_qlsv"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "244783959098-od8g5roc6gl40hp2saapffn3rs38hdk2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALWGyZrutsS0ry48wqdeYpv1lGc_UN5V8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "244783959098-od8g5roc6gl40hp2saapffn3rs38hdk2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
