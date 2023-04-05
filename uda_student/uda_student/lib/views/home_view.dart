@@ -9,6 +9,7 @@ import 'package:ionicons/ionicons.dart';
 import 'package:uda_qlsv/components/home/home_banners.dart';
 import 'package:uda_qlsv/components/home/home_notifies.dart';
 import 'package:uda_qlsv/components/home/home_tab_view.dart';
+import 'package:uda_qlsv/models/home_tab.dart';
 import 'package:uda_qlsv/models/notify.dart';
 import 'package:uda_qlsv/views/notifies_view.dart';
 
@@ -171,7 +172,7 @@ class _HomeViewState extends State<HomeView> {
             icon: const Icon(Ionicons.menu_outline, color: kTextColor)),
         actions: [
           TextButton(
-              onPressed: () {},
+              onPressed: () => Get.toNamed(homeTabs[1].to),
               style:
                   TextButton.styleFrom(splashFactory: NoSplash.splashFactory),
               child: ClipRRect(
