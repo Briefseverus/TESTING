@@ -49,7 +49,9 @@ class InfoController extends GetxController {
     if (loading.isTrue ||
         user.value.cccd.isEmpty ||
         user.value.address.isEmpty ||
-        user.value.phone.isEmpty) {
+        user.value.phone.isEmpty ||
+        user.value.department.isEmpty ||
+        user.value.name.isEmpty) {
       return;
     }
 
@@ -59,15 +61,21 @@ class InfoController extends GetxController {
         val?.name = user.value.name;
         val?.phone = user.value.phone;
         val?.address = user.value.address;
+        val?.department = user.value.department;
+        val?.cccd = user.value.cccd;
       });
 
       appService.user.refresh();
 
       Get.back();
 
-      final _user = await UserService.updateUser(user.value.idsv,
-          user.value.cccd, user.value.phone, user.value.address);
-
+      final _user = await UserService.updateUser(
+          user.value.idsv,
+          user.value.cccd,
+          user.value.phone,
+          user.value.address,
+          user.value.department,
+          user.value.name);
 
       Get.snackbar('Thành công', 'Đã thay dổi thông tin của bạn',
           backgroundColor: Colors.green, colorText: Colors.white);

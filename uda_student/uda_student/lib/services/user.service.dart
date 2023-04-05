@@ -14,11 +14,18 @@ class UserService {
     return response.data["data"] as String;
   }
 
-  static Future<User> updateUser(
-      String idsv, String cccd, String phone, String address) async {
-    final res = await UserService().appService.network.patch(
-        '/users/update/$idsv',
-        data: {'cccd': cccd, 'phone': phone, 'address': address});
+  static Future<User> updateUser(String idsv, String cccd, String phone,
+      String address, String department, String name) async {
+    final res = await UserService()
+        .appService
+        .network
+        .patch('/users/update/$idsv', data: {
+      'cccd': cccd,
+      'phone': phone,
+      'address': address,
+      'department': department,
+      'name': name
+    });
     return User.fromJson(res.data['data']);
   }
 }

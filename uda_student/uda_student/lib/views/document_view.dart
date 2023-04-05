@@ -19,7 +19,7 @@ class DocumentView extends StatelessWidget {
       // Link server save document upload
       // https://api-qlsinhvien.herokuapp.com/
       // final url = "https://api-qlsinhvien.herokuapp.com/uploads/document/${document.content}";
-      final url = "http://192.168.1.5:3000/${document.content}";
+      final url = "http://10.0.2.2:3000/${document.content}";
       if (await canLaunch(url)) {
         await launch(url);
       }

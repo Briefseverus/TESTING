@@ -45,6 +45,35 @@ class InfoEdutForm extends StatelessWidget {
                             prefixIcon: Icon(Ionicons.call_outline,
                                 color: Colors.black.withOpacity(0.5))))),
                 _EditField(
+                    label: 'Họ và tên',
+                    child: TextField(
+                        controller: TextEditingController()
+                          ..text = c.user.value.name,
+                        cursorColor: kPrimaryColor,
+                        onChanged: (String text) => c.user.value.name = text,
+                        style: TextStyle(
+                            // fontWeight: FontWeight.w500
+                            color: Colors.black.withOpacity(0.8)),
+                        decoration: kPrimaryInput.copyWith(
+                            hintText: 'Họ và tên',
+                            prefixIcon: Icon(Ionicons.person_outline,
+                                color: Colors.black.withOpacity(0.5))))),
+                _EditField(
+                    label: 'Khoa',
+                    child: TextField(
+                        controller: TextEditingController()
+                          ..text = c.user.value.department,
+                        cursorColor: kPrimaryColor,
+                        onChanged: (String text) =>
+                            c.user.value.department = text,
+                        style: TextStyle(
+                            // fontWeight: FontWeight.w500
+                            color: Colors.black.withOpacity(0.8)),
+                        decoration: kPrimaryInput.copyWith(
+                            hintText: 'Khoa',
+                            prefixIcon: Icon(Ionicons.home_outline,
+                                color: Colors.black.withOpacity(0.5))))),
+                _EditField(
                     label: 'Số CCCD',
                     child: TextField(
                         controller: TextEditingController()

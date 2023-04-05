@@ -10,7 +10,7 @@ Document _$DocumentFromJson(Map<String, dynamic> json) => Document(
       id: json['id'] as String,
       name: json['name'] as String,
       description: json['description'] as String,
-      content: json['content'] as String,
+      content: json['content'] != null ? json['content'] as String : '',
       createdAt: json['createdAt'] as int,
     );
 

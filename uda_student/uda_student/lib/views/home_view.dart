@@ -34,8 +34,7 @@ class _HomeViewState extends State<HomeView> {
     // 1. Initialize the Firebase app
     await Firebase.initializeApp();
     String? token = await FirebaseMessaging.instance.getToken();
-    log("Get token succesfully: " + token!);
-
+    print('FCMToken: $token');
     // FirebaseMessaging.instance.getToken().then((token) {
     //   print('FCM TOKEN:');
     //   print(token);
