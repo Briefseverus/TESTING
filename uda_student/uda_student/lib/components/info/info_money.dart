@@ -18,7 +18,6 @@ class InfoMoneyView extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 10),
           child: InfoItemView(label: 'Tổng Số Học Phí', content: '${c.tuition.value!.totalTuition} VNĐ'),
         ),
-
         const Divider(),
 
         Padding(

@@ -6,7 +6,11 @@ import 'app.service.dart';
 class NotifiesService {
   AppService appService = Get.find<AppService>();
 
+
+  //get all data notifies
   static Future<List<Notify>> getNotifies() async {
+
+    //api /notifications
     final res =
         await NotifiesService().appService.network.get('/notifications');
 

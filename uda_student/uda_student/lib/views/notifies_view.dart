@@ -12,7 +12,7 @@ class NotifiesView extends StatelessWidget {
 
   static const String route = '/notifies';
 
-  final NotifiesController c = Get.find<NotifiesController>();
+  final NotifiesController notifiesController = Get.find<NotifiesController>();
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +25,10 @@ class NotifiesView extends StatelessWidget {
               child: Column(
                 children: [
                   const SizedBox(height: 20),
-                  Obx(() => c.list.isEmpty
+                  Obx(() => notifiesController.list.isEmpty
                       ? Container()
                       : PostBodyView(
-                          posts: c.list,
+                          posts: notifiesController.list,
                           onClick: (Post post) {
                             Get.toNamed(NotifyView.route, arguments: post);
                           },

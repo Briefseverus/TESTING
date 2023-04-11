@@ -12,6 +12,8 @@ class DocumentsController extends PostsController<Document> {
 
   @override
   Future<List<Document>> getContent() {
-    return DocumentService.getDocuments();
+    var res = DocumentService.getDocuments();
+    print(res);
+    return res;
   }
 }

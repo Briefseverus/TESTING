@@ -10,17 +10,26 @@ class PostItemView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          post.name!,
-          style: const TextStyle(
-              color: kTextColor, fontSize: 16, fontWeight: FontWeight.w500),
+       Column(
+         children: [
+           Text(
+             post.name!,
+             style: const TextStyle(
+                 color: kTextColor, fontSize: 16, fontWeight: FontWeight.w500),
+           ),
+           const SizedBox(height: 10),
+           const Text('17/04/2020', style: TextStyle(color: Colors.grey))
+         ],
+       ),
+        SizedBox(
+          width: 80,
         ),
-        const SizedBox(height: 10),
-        const Text('17/04/2020', style: TextStyle(color: Colors.grey))
+        IconButton(onPressed: () {}, icon: Icon(Icons.download))
       ],
     );
   }
 }
+

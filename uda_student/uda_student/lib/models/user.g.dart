@@ -14,7 +14,7 @@ User _$UserFromJson(Map<String, dynamic> json) => User(
       cccd: json['cccd'] as String,
       address: json['address'] as String,
       phone: json['phone'] as String,
-      className: ClassName.fromJson(json['className'] as Map<String, dynamic>),
+      // className: ClassName.fromJson(json['className'] as Map<String, dynamic>),
       createdAt: json['createdAt'] as int,
     );
 
@@ -26,6 +26,6 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'cccd': instance.cccd,
       'address': instance.address,
       'phone': instance.phone,
-      'className': instance.className,
+      // 'className': instance.className,
       'createdAt': instance.createdAt,
     };

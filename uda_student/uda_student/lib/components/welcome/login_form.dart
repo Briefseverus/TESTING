@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:uda_qlsv/components/welcome/register.dart';
 import 'package:uda_qlsv/controllers/welcome_controller.dart';
 import 'package:uda_qlsv/theme/color.dart';
 
@@ -68,26 +69,41 @@ class LoginForm extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 20),
             child: Obx(() => AnimatedOpacity(
-                  opacity: c.loading.isTrue ? 0.5 : 1,
-                  duration: const Duration(milliseconds: 300),
-                  child: TextButton(
-                      onPressed: () => c.login(),
-                      style: TextButton.styleFrom(padding: EdgeInsets.zero),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(vertical: 15),
-                          width: double.infinity,
-                          color: kPrimaryColor,
-                          child: Center(
-                            child: Text('Đăng Nhập'.toUpperCase(),
-                                style: const TextStyle(
-                                    color: Colors.white, fontSize: 14)),
+                opacity: c.loading.isTrue ? 0.5 : 1,
+                duration: const Duration(milliseconds: 300),
+                child: Column(
+                  children: [
+                    TextButton(
+                        onPressed: () => c.login(),
+                        style: TextButton.styleFrom(padding: EdgeInsets.zero),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(vertical: 15),
+                            width: double.infinity,
+                            color: kPrimaryColor,
+                            child: Center(
+                              child: Text('Đăng Nhập'.toUpperCase(),
+                                  style: const TextStyle(
+                                      color: Colors.white, fontSize: 14)),
+                            ),
                           ),
-                        ),
-                      )),
-                )),
+                        )
+                    ),
+                  ],
+                )
+            )),
           ),
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Register()),
+              );
+            },
+            child: Text("Đăng ký"),
+          )
+
         ],
       ),
     );

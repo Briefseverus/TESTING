@@ -41,18 +41,12 @@ class HomeTabView extends StatelessWidget {
                       child: Container(
                         color: homeTabs[index].color,
                         child: Column(
-
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.center,
-
                           children: [
-
                             Image.asset(homeTabs[index].image, width: 50, height: 50),
-
                             const SizedBox(height: 10),
-
                             Text(homeTabs[index].title, style: kTextTitle.copyWith(color: Colors.white, fontSize: 18))
-
                           ],
                         ),
                       ),

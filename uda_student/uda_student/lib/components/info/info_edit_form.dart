@@ -31,6 +31,20 @@ class InfoEdutForm extends StatelessWidget {
                         fontWeight: FontWeight.w600)),
                 const SizedBox(height: 10),
                 _EditField(
+                    label: 'Địa Chỉ',
+                    child: TextField(
+                        controller: TextEditingController()
+                          ..text = c.user.value.address,
+                        cursorColor: kPrimaryColor,
+                        onChanged: (String text) => c.user.value.address = text,
+                        style: TextStyle(
+                          // fontWeight: FontWeight.w500
+                            color: Colors.black.withOpacity(0.8)),
+                        decoration: kPrimaryInput.copyWith(
+                            hintText: 'Chỗ ở hiện tại',
+                            prefixIcon: Icon(Ionicons.navigate_outline,
+                                color: Colors.black.withOpacity(0.5))))),
+                _EditField(
                     label: 'Số Điện Thoại',
                     child: TextField(
                         controller: TextEditingController()
@@ -59,18 +73,18 @@ class InfoEdutForm extends StatelessWidget {
                             prefixIcon: Icon(Ionicons.at_outline,
                                 color: Colors.black.withOpacity(0.5))))),
                 _EditField(
-                    label: 'Địa Chỉ',
+                    label: 'Department',
                     child: TextField(
                         controller: TextEditingController()
-                          ..text = c.user.value.address,
+                          ..text = c.user.value.department,
                         cursorColor: kPrimaryColor,
-                        onChanged: (String text) => c.user.value.address = text,
+                        onChanged: (String text) => c.user.value.department = text,
                         style: TextStyle(
-                            // fontWeight: FontWeight.w500
+                          // fontWeight: FontWeight.w500
                             color: Colors.black.withOpacity(0.8)),
                         decoration: kPrimaryInput.copyWith(
-                            hintText: 'Chỗ ở hiện tại',
-                            prefixIcon: Icon(Ionicons.navigate_outline,
+                            hintText: 'Số CCCD',
+                            prefixIcon: Icon(Ionicons.at_outline,
                                 color: Colors.black.withOpacity(0.5))))),
                 const SizedBox(height: 20),
                 AnimatedOpacity(

@@ -1,8 +1,10 @@
 import 'dart:developer';
-
+import 'dart:io';
+import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
@@ -12,6 +14,9 @@ import 'package:uda_qlsv/components/home/home_tab_view.dart';
 import 'package:uda_qlsv/models/notify.dart';
 import 'package:uda_qlsv/views/notifies_view.dart';
 
+import 'package:image_picker/image_picker.dart';
+
+import '../models/home_tab.dart';
 import '../theme/color.dart';
 import 'menu_drawer.dart';
 
@@ -29,6 +34,24 @@ class _HomeViewState extends State<HomeView> {
   Notify? _notificationInfo;
   List<Notify>? _listNotification;
   final GlobalKey<ScaffoldState> _key = GlobalKey();
+  File? _image;
+
+  //picture
+  Future getImage() async {
+    final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+    if(image == null) return;
+    final imageTemporary = File(image.path);
+    setState(() {
+      this._image = imageTemporary;
+    });
+  }
+  Future getCamera() async {
+    final camera = await ImagePicker().pickImage(source: ImageSource.camera);
+    if(camera == null) return;
+    setState(() {
+      this._image = File(camera.path);
+    });
+  }
 
   void registerNotification() async {
     // 1. Initialize the Firebase app
@@ -156,7 +179,6 @@ class _HomeViewState extends State<HomeView> {
 
     super.initState();
   }
-
   // Create a key
   @override
   Widget build(BuildContext context) {
@@ -171,19 +193,58 @@ class _HomeViewState extends State<HomeView> {
             onPressed: () => _key.currentState!.openDrawer(),
             icon: const Icon(Ionicons.menu_outline, color: kTextColor)),
         actions: [
-          TextButton(
-              onPressed: () {},
-              style:
-                  TextButton.styleFrom(splashFactory: NoSplash.splashFactory),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(56),
-                child: CachedNetworkImage(
-                  imageUrl: 'https://i.imgur.com/X1N3ZzD.jpeg',
-                  height: 40,
-                  width: 40,
-                  fit: BoxFit.cover,
-                ),
-              ))
+          // TextButton(
+          //     onPressed: () {},
+          //     style:
+          //         TextButton.styleFrom(splashFactory: NoSplash.splashFactory),
+          //     child: ClipRRect(
+          //       borderRadius: BorderRadius.circular(56),
+          //       child: CachedNetworkImage(
+          //         imageUrl: 'https://i.imgur.com/X1N3ZzD.jpeg',
+          //         height: 40,
+          //         width: 40,
+          //         fit: BoxFit.cover,
+          //       ),
+          //     ));
+          Container(
+            child: Row(
+              children: [
+                Stack(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.fromLTRB(40, 0, 0, 10),
+                      child: Row(
+                        children: [
+                         TextButton(onPressed: () {
+                           Get.toNamed(homeTabs[1].to);
+                         },
+                           child:  _image !=null ? Image.file(_image!, width: 40, height: 40, fit: BoxFit.cover,): Image.network('https://toigingiuvedep.vn/wp-content/uploads/2021/05/hinh-anh-nam-buon-chat.jpg',
+                             width: 50,
+                             height: 50,
+                             fit:BoxFit.cover
+                         ),)
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(0, 30, 0, 10),
+                    height: 10,
+                      child: Row(
+                        children: [
+                          ElevatedButton(
+                              onPressed: getImage,
+                              child: Icon(Icons.file_copy_outlined, size: 10,)
+                          ),
+                          ElevatedButton(onPressed: getCamera, child: Icon(Icons.party_mode_sharp, size: 10,)),
+                        ],
+                      ),
+                    )
+
+                  ],
+                )
+              ],
+            ),
+          )
         ],
       ),
       drawer: MenuDrawer(),
@@ -192,10 +253,12 @@ class _HomeViewState extends State<HomeView> {
           child: Column(
             children: [
               const SizedBox(height: 20),
-              const HomeBanners(),
+              HomeBanners(),
               const SizedBox(height: 20),
               HomeNotifies(),
               const SizedBox(height: 20),
+
+              //QuanLy
               const HomeTabView()
             ],
           ),

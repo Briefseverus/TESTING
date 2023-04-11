@@ -13,7 +13,6 @@ class MenuTable {
   int session;
   Subject subject;
   int createdAt;
-
   MenuTable(
       {required this.id,
       required this.className,

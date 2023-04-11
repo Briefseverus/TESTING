@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:uda_qlsv/components/info/info_item_view.dart';
+import 'package:uda_qlsv/controllers/class_controller.dart';
 import 'package:uda_qlsv/controllers/info_controller.dart';
 import 'package:uda_qlsv/services/app.service.dart';
 
@@ -11,6 +12,7 @@ class InfoTabContent extends StatelessWidget {
 
   final AppService appService = Get.find<AppService>();
   final InfoController c = Get.find<InfoController>();
+  // final Class_Controller classCRT  = Get.find<Class_Controller>();
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,7 @@ class InfoTabContent extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 10),
           child: InfoItemView(
-              label: 'Lớp', content: appService.user.value!.className.name),
+              label: 'Department', content: appService.user.value!.department),
         ),
         const Divider(),
         Padding(

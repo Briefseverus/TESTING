@@ -29,11 +29,11 @@ class DocumentsView extends StatelessWidget {
                   Obx(() => c.list.isEmpty
                       ? Container()
                       : PostBodyView(
-                          posts: c.list,
-                          onClick: (Post post) {
-                            Get.toNamed(DocumentView.route, arguments: post);
-                          },
-                        ))
+                    posts: c.list,
+                    onClick: (Post post) {
+                      Get.toNamed(DocumentView.route, arguments: post);
+                    },
+                  ))
                 ],
               ),
             ),

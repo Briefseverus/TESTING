@@ -13,4 +13,5 @@ class HomeController extends PostsController {
   Future<List> getContent() {
     return NotifiesService.homeNotifies();
   }
+
 }
