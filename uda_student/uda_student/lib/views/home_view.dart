@@ -257,9 +257,9 @@ class _HomeViewState extends State<HomeView> {
               const SizedBox(height: 20),
               HomeNotifies(),
               const SizedBox(height: 20),
-
               //QuanLy
-              const HomeTabView()
+              const HomeTabView(),
+              const SizedBox(height: 20),
             ],
           ),
         ),

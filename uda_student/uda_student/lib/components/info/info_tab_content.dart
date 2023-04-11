@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:uda_qlsv/components/info/info_item_view.dart';
-import 'package:uda_qlsv/controllers/class_controller.dart';
 import 'package:uda_qlsv/controllers/info_controller.dart';
 import 'package:uda_qlsv/services/app.service.dart';
 
@@ -58,6 +57,11 @@ class InfoTabContent extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 10),
           child: Obx(() => InfoItemView(
               label: 'Số Điện Thoại', content: appService.user.value!.phone)),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          child: Obx(() => InfoItemView(
+              label: 'Class', content: appService.user.value!.className?.name ?? '')),
         ),
         const SizedBox(height: 50),
         Obx(() => AnimatedOpacity(

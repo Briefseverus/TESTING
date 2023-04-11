@@ -8,9 +8,7 @@ import '../../theme/text.dart';
 
 class HomeNotifies extends StatelessWidget {
   HomeNotifies({Key? key}) : super(key: key);
-
   final HomeController c = Get.find<HomeController>();
-
   @override
   Widget build(BuildContext context) {
     return Padding(
