@@ -17,6 +17,7 @@ import 'package:uda_qlsv/views/notifies_view.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../models/home_tab.dart';
+import '../services/app.service.dart';
 import '../theme/color.dart';
 import 'menu_drawer.dart';
 
@@ -35,6 +36,7 @@ class _HomeViewState extends State<HomeView> {
   List<Notify>? _listNotification;
   final GlobalKey<ScaffoldState> _key = GlobalKey();
   File? _image;
+  final AppService appService = Get.find<AppService>();
 
   //picture
   Future getImage() async {
@@ -194,18 +196,25 @@ class _HomeViewState extends State<HomeView> {
             icon: const Icon(Ionicons.menu_outline, color: kTextColor)),
         actions: [
           // TextButton(
-          //     onPressed: () {},
+          //     onPressed: () {
+          //       Get.toNamed(homeTabs[1].to);
+          //     },
           //     style:
           //         TextButton.styleFrom(splashFactory: NoSplash.splashFactory),
           //     child: ClipRRect(
           //       borderRadius: BorderRadius.circular(56),
-          //       child: CachedNetworkImage(
-          //         imageUrl: 'https://i.imgur.com/X1N3ZzD.jpeg',
-          //         height: 40,
-          //         width: 40,
-          //         fit: BoxFit.cover,
-          //       ),
-          //     ));
+          //       child: Container(
+          //        child: Row(
+          //          children: [
+          //            Stack(
+          //              children: [
+          //
+          //              ],
+          //            )
+          //          ],
+          //        ),
+          //       )
+          //     )
           Container(
             child: Row(
               children: [
@@ -222,20 +231,41 @@ class _HomeViewState extends State<HomeView> {
                              width: 50,
                              height: 50,
                              fit:BoxFit.cover
-                         ),)
+                         ),),
+                          Text(appService.user.value!.name, style: TextStyle(color: Colors.black)),
                         ],
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.fromLTRB(0, 30, 0, 10),
-                    height: 10,
-                      child: Row(
+                      child: Column(
                         children: [
-                          ElevatedButton(
-                              onPressed: getImage,
-                              child: Icon(Icons.file_copy_outlined, size: 10,)
-                          ),
-                          ElevatedButton(onPressed: getCamera, child: Icon(Icons.party_mode_sharp, size: 10,)),
+                          TextButton(onPressed: () {
+                            showModalBottomSheet(
+                                context: context,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.vertical(
+                                      top: Radius.circular(20),
+                                       bottom: Radius.circular(20)
+                                  )
+                                ),
+                                builder: (BuildContext context) {
+                                  return Container(
+                                    padding: EdgeInsets.all(16),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        ElevatedButton(
+                                            onPressed: getImage,
+                                            child: Icon(Icons.file_copy_outlined, size: 20,)
+                                        ),
+                                        ElevatedButton(onPressed: getCamera, child: Icon(Icons.party_mode_sharp, size: 20,)),
+                                      ],
+                                    ),
+                                  );
+                                }
+                            );
+                          }, child:  Icon(Icons.party_mode_sharp, size: 20,)
+                          )
                         ],
                       ),
                     )

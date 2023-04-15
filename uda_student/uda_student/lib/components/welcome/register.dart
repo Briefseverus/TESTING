@@ -201,18 +201,3 @@ class Register extends StatelessWidget {
     );
   }
 }
-
-// class showClass extends StatelessWidget {
-//   final Class_Controller c = Get.find<Class_Controller>();
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     // TODO: implement build
-//     return Column(
-//       children: [
-//         Text('${c.className.value!.name}')
-//       ],
-//     );
-//   }
-//
-// }
