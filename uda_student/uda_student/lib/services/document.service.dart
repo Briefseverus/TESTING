@@ -16,7 +16,7 @@ class DocumentService {
     for (var element in list) {
       notifies.add(Document.fromJson(element));
     }
-
+    print(notifies);
     return notifies;
   }
 }

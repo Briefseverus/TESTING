@@ -27,6 +27,7 @@ class Notify implements Post {
   /// to JSON. The implementation simply calls the private, generated
   /// helper method `_$EventToJson`.
   Map<String, dynamic> toJson() => _$NotifyToJson(this);
+
 }
 
 List<Notify> notifiesList = [

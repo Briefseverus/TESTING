@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "244783959098",
-    "project_id": "api-quanlysv",
-    "storage_bucket": "api-quanlysv.appspot.com"
+    "project_number": "80103464747",
+    "project_id": "udastuden",
+    "storage_bucket": "udastuden.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:244783959098:android:971b5df7e7a2ad56c0b903",
+        "mobilesdk_app_id": "1:80103464747:android:c36f77e56f4f2900b6ef6e",
         "android_client_info": {
           "package_name": "com.example.uda_qlsv"
         }
       },
       "oauth_client": [
         {
-          "client_id": "244783959098-od8g5roc6gl40hp2saapffn3rs38hdk2.apps.googleusercontent.com",
+          "client_id": "80103464747-f3p39703i0jm6pe0tlfi4h2qsgefc9jg.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyALWGyZrutsS0ry48wqdeYpv1lGc_UN5V8"
+          "current_key": "AIzaSyCpwf7n1GHucDFtEUnQ6NEw6b5-s9sMpHo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "244783959098-od8g5roc6gl40hp2saapffn3rs38hdk2.apps.googleusercontent.com",
+              "client_id": "80103464747-f3p39703i0jm6pe0tlfi4h2qsgefc9jg.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

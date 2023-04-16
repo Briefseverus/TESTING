@@ -11,6 +11,7 @@ class InfoTabContent extends StatelessWidget {
 
   final AppService appService = Get.find<AppService>();
   final InfoController c = Get.find<InfoController>();
+  // final Class_Controller classCRT  = Get.find<Class_Controller>();
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +32,7 @@ class InfoTabContent extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 10),
           child: InfoItemView(
-              label: 'Lớp', content: appService.user.value!.className.name),
+              label: 'Department', content: appService.user.value!.department),
         ),
         const Divider(),
         Padding(
@@ -56,6 +57,11 @@ class InfoTabContent extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 10),
           child: Obx(() => InfoItemView(
               label: 'Số Điện Thoại', content: appService.user.value!.phone)),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          child: Obx(() => InfoItemView(
+              label: 'Class', content: appService.user.value!.className?.name ?? '')),
         ),
         const SizedBox(height: 50),
         Obx(() => AnimatedOpacity(

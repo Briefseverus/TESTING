@@ -7,10 +7,10 @@ part of 'notify.dart';
 // **************************************************************************
 
 Notify _$NotifyFromJson(Map<String, dynamic> json) => Notify(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      description: json['description'] as String,
-      createdAt: json['createdAt'] as int,
+      id: json['id'] as String?,
+      name: json['name'] as String?,
+      description: json['description'] as String?,
+      createdAt: json['createdAt'] as int?,
     );
 
 Map<String, dynamic> _$NotifyToJson(Notify instance) => <String, dynamic>{

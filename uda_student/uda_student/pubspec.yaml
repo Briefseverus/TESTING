@@ -34,15 +34,17 @@ dependencies:
   firebase_core_platform_interface: ^4.5.3
   firebase_core: ^2.7.1
   firebase_messaging: ^14.2.6
+  cloud_firestore: ^4.1.0
   flutter:
     sdk: flutter
   flutter_secure_storage: ^8.0.0
   get: ^4.6.1
   ionicons: ^0.2.2
-  json_annotation: ^4.4.0
+  json_annotation: ^4.7.0
   overlay_support: ^2.1.0
   url_launcher: ^6.0.20
-
+  image_picker: ^0.8.6
+  geolocator: ^9.0.2
 dev_dependencies:
   build_runner: ^2.1.10
 

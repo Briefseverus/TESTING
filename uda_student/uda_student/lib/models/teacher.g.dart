@@ -1,33 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'user.dart';
+part of 'teacher.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-User _$UserFromJson(Map<String, dynamic> json) => User(
+Teacher _$TeacherFromJson(Map<String, dynamic> json) => Teacher(
       id: json['id'] as String,
-      idsv: json['idsv'] as String,
+      idGV: json['idGV'] as String,
       name: json['name'] as String,
       department: json['department'] as String,
       cccd: json['cccd'] as String,
       address: json['address'] as String,
       phone: json['phone'] as String,
-      className: json['className'] == null
-          ? null
-          : ClassName.fromJson(json['className'] as Map<String, dynamic>),
-      createdAt: json['createdAt'] as int,
     );
 
-Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
+Map<String, dynamic> _$TeacherToJson(Teacher instance) => <String, dynamic>{
       'id': instance.id,
-      'idsv': instance.idsv,
+      'idGV': instance.idGV,
       'name': instance.name,
       'department': instance.department,
       'cccd': instance.cccd,
       'address': instance.address,
       'phone': instance.phone,
-      'className': instance.className,
-      'createdAt': instance.createdAt,
     };

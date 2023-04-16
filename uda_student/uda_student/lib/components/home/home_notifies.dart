@@ -24,9 +24,12 @@ class HomeNotifies extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: Container(
+              constraints: BoxConstraints(maxHeight: 200),
               color: kTextBG,
               padding: const EdgeInsets.all(20),
-              child: Obx(() => c.list.isNotEmpty ? _Notifies() : Container()),
+              child: SingleChildScrollView(
+                child: Obx(() => c.list.isNotEmpty ? _Notifies() : Container()),
+              ),
             ),
           )
         ],
@@ -44,24 +47,38 @@ class _Notifies extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-      primary: true,
-      shrinkWrap: true,
-      separatorBuilder: (context, index) {
-        return const Divider();
-      },
-      itemCount: c.list.length <= 5 ? c.list.length : 5,
-      itemBuilder: (ctx, index) => Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10),
-        child: GestureDetector(
-          onTap: () => Get.toNamed(NotifyView.route, arguments: c.list[index]),
-          child: Text(
-            c.list[index].name.toString(),
-            style: const TextStyle(
-                color: kTextColor, fontSize: 15, fontWeight: FontWeight.w500),
+    return Column(
+      children: [
+        ListView.separated(
+          physics: const NeverScrollableScrollPhysics(),
+          primary: true,
+          shrinkWrap: true,
+          separatorBuilder: (context, index) {
+            return const Divider();
+          },
+          itemCount: c.list.length <= 5 ? c.list.length : 5,
+          itemBuilder: (ctx, index) => Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: Container(
+              margin: EdgeInsets.symmetric(vertical: 5),
+              child: InkWell(
+                onTap: () =>
+                    Get.toNamed(NotifyView.route, arguments: c.list[index]),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    c.list[index].name.toString(),
+                    style: const TextStyle(
+                        color: kTextColor,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500),
+                  ),
+                ),
+              ),
+            ),
           ),
         ),
-      ),
+      ],
     );
   }
 }

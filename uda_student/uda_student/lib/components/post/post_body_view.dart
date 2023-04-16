@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:uda_qlsv/abstract/post.dart';
 import 'package:uda_qlsv/components/post/post_item_view.dart';
 
+import '../../models/class_name.dart';
+
 class PostBodyView extends StatelessWidget {
   const PostBodyView({
     Key? key,

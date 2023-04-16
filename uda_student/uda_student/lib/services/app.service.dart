@@ -3,11 +3,13 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
+import 'package:uda_qlsv/models/class_name.dart';
 import 'package:uda_qlsv/models/user.dart';
 import 'package:uda_qlsv/views/welcome_view.dart';
 
 class AppService extends GetxService {
   Rx<User?> user = Rx<User?>(null);
+  Rx<ClassName?> className = Rx<ClassName?>(null);
   String? _token;
 
   bool get $auth {
@@ -31,7 +33,9 @@ class AppService extends GetxService {
     _dio.options.headers['Authorization'] = 'Bearer $_token';
     // Link API
     // https://api-qlsinhvien.herokuapp.com/
-    _dio.options.baseUrl = 'http://192.168.1.5:3000/';
+    // _dio.options.baseUrl = 'http://192.168.1.5:3000/';
+    // _dio.options.baseUrl = 'http://172.16.14.156:3000/';
+    _dio.options.baseUrl = 'http://192.168.32.1:3000/';
     // _dio.options.baseUrl = 'https://api-qlsinhvien.herokuapp.com/';
 
     return _dio;
@@ -94,6 +98,8 @@ class AppService extends GetxService {
 
   Future<User> getMe() async {
     final res = await network.get('/users/me');
-    return User.fromJson(res.data['data']);
+    var result = User.fromJson(res.data['data']);
+    return result;
+    //return User.fromJson(res.data['data']);
   }
 }
